@@ -9,6 +9,8 @@ package imc;
  *
  * @author 41380665
  */
+import javax.swing.JFrame;
+
 public class IMC {
 
     /**
