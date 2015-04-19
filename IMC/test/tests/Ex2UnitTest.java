@@ -53,7 +53,14 @@ public class Ex2UnitTest {
     @Test
     public void MensagemTest() {
         Ex2 ex = new Ex2();
-        String esperado = "CUIDADO!!Voce estar obesa! IMC 27.68";
-        assertEquals(esperado, ex.mensagem(0, 27.68));
+        String esperado = "PARABENS!!Voce estar com o peso ideal! IMC 21.25";
+        assertEquals(esperado, ex.mensagem(1, 21.25));
+    }
+    @Test
+    public void SetIconByPhotoAndGenderTest () {
+        Ex2 ex = new Ex2();
+        int esperado = 0;
+        ex.setIconByPhotoAndGender(0, 1);
+        assertEquals(esperado, ex.foto);
     }
 }
