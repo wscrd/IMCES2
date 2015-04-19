@@ -213,7 +213,6 @@ public class Ex2 extends JFrame
                foto=2;
             }
             //configure a foto conforme a posição da variável foto
-            Lfoto.setIcon(imagemM[foto]);
          }
          else if (tipo==1)
          {
@@ -234,17 +233,18 @@ public class Ex2 extends JFrame
                foto=2;
             }
             //configure a foto conforme a posição da variável foto
-            Lfoto.setIcon(imagemH[foto]);
+            
             
          }
+       setIconPeloGenero(tipo);
        return saida;
    }
    
-   public void setIconByPhotoAndGender(int foto, int tipo) {
+   public void setIconPeloGenero(int tipo) {
        this.foto = foto;
-       if (foto == 0)
+       if (tipo == 0)
          Lfoto.setIcon(imagemM[foto]);
-       else if (foto == 1)
+       else if (tipo == 1)
          Lfoto.setIcon(imagemH[foto]);
    }
    //método para limpar os dados da tela e retornar a tela ao seu tamanho original
