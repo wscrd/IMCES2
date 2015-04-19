@@ -226,6 +226,12 @@ public class Ex2 extends JFrame
         altura=0;
        }
    }
+   
+   public double Calcula(int tipo, double peso, double altura) {
+       double imc;
+       imc = peso/(altura*altura);
+       return imc;
+   }
    //método para limpar os dados da tela e retornar a tela ao seu tamanho original
    private void limpar()
    {
