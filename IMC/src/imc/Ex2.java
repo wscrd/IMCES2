@@ -166,7 +166,7 @@ public class Ex2 extends JFrame
           //da mesma forma com Fpeso para a variável peso
           peso=Double.parseDouble(Fpeso.getText());
           //realiza calculos
-          massa=peso/(altura*altura);
+          massa = Calcula(tipo, peso, altura);
           /*Se a massa corporal for menor do que o estabelecido pelo vetor configure a variável
            string com essa frase*/
          if (tipo==0)
@@ -227,10 +227,56 @@ public class Ex2 extends JFrame
        }
    }
    
-   public double Calcula(int tipo, double peso, double altura) {
+   public static double Calcula(int tipo, double peso, double altura) {
        double imc;
        imc = peso/(altura*altura);
        return imc;
+   }
+   
+   public String mensagem(int tipo, double massa) {
+       String saida = "";
+       if (tipo==0)
+         {
+            if (imc_mulheres[0]>massa)
+            {
+               saida = String.format("CUIDADO!!!Voce estar abaixo do peso! IMC %.2f",massa);
+               foto=0;
+            }
+            else if((imc_mulheres[0]<massa) && (massa<=imc_mulheres[1]))
+            {
+               saida = String.format("PARABENS!!Voce estar com o peso ideal! IMC %.2f",massa);
+               foto=1;
+            }
+            else
+            {
+               saida = String.format("CUIDADO!!Voce estar obesa! IMC %.2f",massa);
+               foto=2;
+            }
+            //configure a foto conforme a posição da variável foto
+            Lfoto.setIcon(imagemM[foto]);
+         }
+         else if (tipo==1)
+         {
+            if (imc_homens[0]>massa)
+            {
+               saida = String.format("CUIDADO!!!Voce estar abaixo do peso! IMC %.2f",massa);
+               //configura a posição que será exibido a imagem
+               foto=0;
+            }
+            else if((imc_homens[0]<massa) && (massa<imc_homens[1]))
+            {
+               saida = String.format("PARABENS!!Voce estar com o peso ideal! IMC %.2f",massa);
+               foto=1;
+            }
+            else
+            {
+               saida = String.format("CUIDADO!!Voce estar obeso! IMC %.2f",massa);
+               foto=2;
+            }
+            //configure a foto conforme a posição da variável foto
+            
+         }
+       return saida;
    }
    //método para limpar os dados da tela e retornar a tela ao seu tamanho original
    private void limpar()
