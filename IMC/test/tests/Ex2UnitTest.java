@@ -26,21 +26,34 @@ public class Ex2UnitTest {
     // @Test
     // public void hello() {}
     @Test
-    public void Ex2SetLocationTest() {
+    public void SetLocationTest() {
         Ex2 ex = new Ex2();
         ex.setLocation(200, 300);
         assertEquals(new Point(200, 300), ex.getLocation());
     }
     @Test
-    public void EX2VisibleTest()
+    public void VisibleTest()
     {
         Ex2 ex = new Ex2();
         ex.setVisible(true);
         assertTrue(ex.isVisible());
     }
     @Test
-    public void EX2SetSizeTest() {
+    public void SetSizeTest() {
         Ex2 ex = new Ex2();
         assertEquals(new Dimension(370,160), ex.getSize());
+    }
+    @Test
+    public void CalculaTest() {
+        double altura = 1.70; 
+        int tipo = 0; //mulher
+        double peso = 80;
+        assertEquals(27.68, Ex2.Calcula(tipo, peso, altura), 0.01);
+    }
+    @Test
+    public void MensagemTest() {
+        Ex2 ex = new Ex2();
+        String esperado = "CUIDADO!!Voce estar obesa! IMC 27.68";
+        assertEquals(esperado, ex.mensagem(0, 27.68));
     }
 }
