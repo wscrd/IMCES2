@@ -57,10 +57,12 @@ public class Ex2UnitTest {
         assertEquals(esperado, ex.mensagem(1, 21.25));
     }
     @Test
-    public void SetIconByPhotoAndGenderTest () {
+    public void SetIconPeloGeneroTest () {
         Ex2 ex = new Ex2();
+        ex.foto = 0;
         int esperado = 0;
-        ex.setIconByPhotoAndGender(0, 1);
+        ex.setIconPeloGenero(1);//homem
         assertEquals(esperado, ex.foto);
+        
     }
 }
