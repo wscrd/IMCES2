@@ -42,12 +42,12 @@ public class Ex2 extends JFrame
    //Vetor de caracteres (String) de 2 colunas
    private String sexo[]={"Mulher","Homem"};
    //inteiros (int)
-   int tipo, foto;
+   public int tipo, foto;
    //numeros de pontos flutuantes (double)
-   double altura, peso, massa;
+   public double altura, peso, massa;
    //criando um array já com os valores configurados do tipo double
-   double imc_homens[] ={20.7,26.4};
-   double imc_mulheres[] ={19.1,25.8};
+   public double imc_homens[] ={20.7,26.4};
+   public double imc_mulheres[] ={19.1,25.8};
    private String string="";
 
    //criação do FlowLayout que alinha componentes da esquerda para a direita.
